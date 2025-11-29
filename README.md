@@ -8,5 +8,5 @@ class balancing and stringent quality-control checks; established robust trainin
 Trained, tuned, and benchmarked Transformer / Seq2Seq models using ROUGE/BLEU and clinician-centric
 consistency metrics; iteratively refined decoding strategies and post-processing to reduce hallucinations and ensure
 faithful inclusion of key medical findings
-###Collaborated closely with clinicians to define interpretability, factuality, and safety requirements, and implemented a
+### Collaborated closely with clinicians to define interpretability, factuality, and safety requirements, and implemented a
 human-in-the-loop feedback loop to improve model reliability and clinical applicability
