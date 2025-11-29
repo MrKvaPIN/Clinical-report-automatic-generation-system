@@ -1,0 +1,186 @@
+/* 主样式文件 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.chat-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.chat-messages {
+    height: 450px;
+    overflow-y: auto;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    text-align: right;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: #f1f1f1;
+    color: #333;
+    text-align: left;
+    margin-right: auto;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3367d6;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 10px;
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .chat-container {
+        padding: 15px;
+    }
+    
+    .chat-messages {
+        height: 350px;
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+}
+
+/* =========================
+   Markdown 渲染优化样式
+   （仅作用于机器人消息）
+   ========================= */
+.bot-message h1, .bot-message h2, .bot-message h3 {
+    margin: 0.6em 0 0.4em;
+    font-weight: 600;
+    line-height: 1.25;
+}
+.bot-message h1 { font-size: 1.35rem; }
+.bot-message h2 { font-size: 1.2rem; }
+.bot-message h3 { font-size: 1.05rem; }
+
+.bot-message p, .bot-message ul, .bot-message ol, .bot-message blockquote {
+    margin: 0.5em 0;
+}
+.bot-message ul, .bot-message ol {
+    padding-left: 1.4em;
+}
+
+.bot-message code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.95em;
+    background: #f6f8fa;
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+}
+
+.bot-message pre {
+    background: #f6f8fa;
+    padding: 12px;
+    border-radius: 8px;
+    overflow: auto;
+}
+.bot-message pre code {
+    background: transparent;
+    padding: 0;
+}
+
+.bot-message table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75em 0;
+    font-size: 0.95em;
+}
+.bot-message th, .bot-message td {
+    border: 1px solid #e6e6e6;
+    padding: 8px 10px;
+    text-align: left;
+}
+.bot-message thead th {
+    background: #fafafa;
+    font-weight: 600;
+}
+
+.bot-message blockquote {
+    border-left: 4px solid #e0e0e0;
+    padding-left: 12px;
+    color: #555;
+    background: #fbfbfb;
+    border-radius: 4px;
+}
