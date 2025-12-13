@@ -1,12 +1,22 @@
 # Clinical-report-automatic-generation-system
-## This project is an AI-assisted case screening system developed by Dr. Liuzhen Su's team at Fudan University.
-Designed and optimized an end-to-end clinical report generation system using NLP and deep learning to convert raw
-EHRs into concise, clinician-ready summaries, significantly improving report accuracy, consistency, and generation
-efficiency
-### Built a complete data pipeline for real-world hospital text, including cleaning, de-noising, terminology normalization,
-class balancing and stringent quality-control checks; established robust training, validation, and evaluation procedures
-Trained, tuned, and benchmarked Transformer / Seq2Seq models using ROUGE/BLEU and clinician-centric
-consistency metrics; iteratively refined decoding strategies and post-processing to reduce hallucinations and ensure
-faithful inclusion of key medical findings
-### Collaborated closely with clinicians to define interpretability, factuality, and safety requirements, and implemented a
-human-in-the-loop feedback loop to improve model reliability and clinical applicability
+
+A lightweight web application built with Flask. It calls the DeepSeek large language model to perform structured parsing of input medical records and generate clinical reports. The system supports Markdown rendering, code highlighting, and basic XSS sanitization.
+
+## Key Features
+- Paste raw medical record text and automatically generate a structured clinical report (patient basics, diagnosis and pathology, treatment course and response, prognosis assessment and follow-up plan)
+- Front-end renders model responses with Markdown and code highlighting for improved readability
+- Back-end provides a unified wrapper for calling the DeepSeek Chat Completions API
+
+## Tech Stack
+- Back end: `Python 3`, `Flask`, `requests`
+- Front end: vanilla `HTML/CSS/JS`, `marked` (Markdown parsing), `DOMPurify` (XSS sanitization), `highlight.js` (code highlighting)
+
+## Project Structure
+```text
+Clinical-report-automatic-generation-system-main/
+├─ deepseek_api.py           # Flask app and DeepSeek API wrapper
+├─ templates/
+│  └─ index.html            # Front-end page (chat UI and rendering)
+├─ static/
+│  └─ style.css             # Page styles
+└─ Document recognition results/             # Sample data and outputs (not required to run)
